@@ -79,7 +79,7 @@ nav a::after {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #ffb400;
+  background-color: #060956;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -99,7 +99,7 @@ nav a:hover::after {
 }
 
 /* Mobile responsive: burger muncul */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   nav {
     position: absolute;
     top: 70px;
@@ -351,6 +351,7 @@ nav a:hover::after {
   width: 100%;
   background: #0b0c3d;
   padding: 40px 0;
+        align-items: center;
 }
 
 .site-footer {
@@ -365,9 +366,9 @@ nav a:hover::after {
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: left;
   flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
 }
 
 .footer-logo img {
@@ -407,19 +408,20 @@ font-weight: 600;
     font-size: 0.85rem;
     }
 
-    @media (max-width: 600px) {
-  .footer-content {
+   @media (max-width: 600px) {
+  .footer-container {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: left;
+    text-align: left;
+      width: 1200px;
   }
 
   .footer-logo {
-    margin-bottom: 20px;
+    text-align: left;
   }
 
   .footer-links {
-    align-items: center;
+    align-items: left;
   }
 }
       @media (max-width: 480px) {
@@ -450,8 +452,8 @@ font-weight: 600;
 }
 
 .social-icon {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   transition: transform 0.3s;
 }
 
@@ -468,8 +470,8 @@ font-weight: 600;
   <div class="page-wrapper">
    <header>
   <div class="header-left">
-    <a href="homepage.html">
-      <img src="logo.png" class="imglogo" alt="logo" style="width: 100px;">
+    <a href="index.html">
+      <img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/logo.png" class="imglogo" alt="logo" style="width: 100px;">
     </a>
   </div>
 
@@ -616,7 +618,10 @@ font-weight: 600;
 </div>
   </div>
 </footer>
-  </div>
+
+
+    </div>
+
     <div class="bottom-note">
       &copy; 2025 Esemka Gallery. All rights reserved.
     </div>
