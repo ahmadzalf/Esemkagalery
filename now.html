@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esemka Gallery Folder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #060956;
+      font-size: 1rem;
+    }
+
+    .profile-icon {
+      width: 40px;
+      height: 40px;
+      background-color: #c6c6cc;
+      border-radius: 50%;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to bottom right, #fff, #eee);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      letter-spacing: 5px;
+    }
+
+    .hero h2 {
+      font-size: 1.5rem;
+      color: #ffb400;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #060956;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .gallery-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .gallery-card p {
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+      }
+
+      nav {
+        text-align: center;
+        margin-top: 10px;
+        width: 100%;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <img src="https://via.placeholder.com/100x40?text=Logo" class="imglogo" alt="Logo">
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+    </nav>
+    <img src="https://via.placeholder.com/40" class="profile-icon" alt="Profile">
+  </header>
+
+  <section id="home" class="hero">
+    <h2>WELCOME TO</h2>
+    <h1>ESEMKA <span style="color:#ffb400;">GALLERY</span></h1>
+    <p>These are some documentation folders regarding<br>the activities of <span style="color: orange">SMK MULTAZAM BOGOR</span></p>
+  </section>
+
+  <section id="gallery" class="gallery-grid">
+    <div class="gallery-card"><img src="https://via.placeholder.com/300x200" alt="Gallery 1"><p>LDKS Moment</p></div>
+    <div class="gallery-card"><img src="https://via.placeholder.com/300x200" alt="Gallery 2"><p>Futsal Moment</p></div>
+    <div class="gallery-card"><img src="https://via.placeholder.com/300x200" alt="Gallery 3"><p>Berenang Moment</p></div>
+  </section>
+</body>
+</html>
