@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esemka Gallery Folder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      scroll-behavior: smooth;
+    }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.burger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE NAV */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: white;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+
+    .profile-icon {
+      width: 40px;
+      height: 40px;
+      background-color: #c6c6cc;
+      border-radius: 50%;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 80px 20px;
+      overflow: hidden;
+      width: 100%;
+      min-height: 550px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-wrapper > *:not(footer):not(.bottom-note) {
+      flex: 1;
+    }
+
+    .footer-wrapper {
+      background: #0b0c3d;
+      width: 100vw;
+    }
+
+    .footer {
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #ffb300;
+    }
+
+    @media (max-width: 600px) {
+      .footer {
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+   <header>
+  <div class="logo">
+    <img src="https://via.placeholder.com/100x40?text=Logo" alt="Logo">
+  </div>
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+  </nav>
+  <div class="burger" onclick="toggleMenu()">
+    ☰
+  </div>
+</header>
+
+    <section id="home" class="hero">
+      <h2>WELCOME TO</h2>
+      <h1>
+        <span style="color: #060956;">ESEMKA<br>GALLERY</span>
+        <span style="color: #ffb400;">FOLDER</span>
+      </h1>
+      <p>These are some documentation folders regarding the activities of <span style="color: orange">SMK MULTAZAM BOGOR</span></p>
+    </section>
+
+    <section id="our-story" style="padding: 40px 20px; background: #f0f0f0; text-align: center;">
+      <h2><span style="color: #ffb400">Our</span> <span style="color: #060956">Story</span></h2>
+      <p>Cerita tentang beberapa dokumentasi kegiatan selama di Pondok Sekolah SMK Multazam Bogor</p>
+      <div style="margin-top: 20px;">
+        <img src="ourstory.jpg" alt="Our Story" style="max-width: 100%; border-radius: 8px;">
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery-section container">
+      <h2 class="text-center"><span style="color: #060956">GALLERY </span><span style="color: #ffb400">PAGE</span></h2>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img src="3.png" alt="LDKS">
+          <p><strong>LDKS <span style="color: orange">Moment</span></strong></p>
+          <p>Kegiatan pelatihan dasar kepemimpinan siswa yang dilaksanakan oleh SMK Multazam Bogor.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-wrapper">
+      <footer class="footer">
+        <div class="footer-logo">
+          <img src="logo.png" alt="Logo">
+        </div>
+        <div class="footer-contact">
+          <p>Email: info@esemka.com</p>
+        </div>
+        <div class="navij">
+          <a href="#home">Home</a><br>
+          <a href="#gallery">Gallery</a><br>
+          <a href="#info">Info</a><br>
+        </div>
+      </footer>
+    </div>
+
+    <div class="bottom-note">
+      &copy; 2025 Esemka Gallery. All rights reserved.
+    </div>
+  </div>
+<script>
+  function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
