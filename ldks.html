@@ -8,88 +8,127 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
+      scroll-behavior: smooth;
     }
 
-      body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-      body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/13.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.3;
-  z-index: -1;
-}
+    .page-wrapper {
+    flex: 1;
+    }
 
-.page-wrapper {
-  flex: 1;
-}
-
+    /* Header */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background-color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    flex-wrap: nowrap;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .imglogo {
-      width: 100px;
+    .header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     }
 
+    .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    }
+
+    .burger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+    }
+
+    nav {
+    display: flex;
+    gap: 25px; /* jarak antar link */
+    align-items: center;
+    }
+
+    /* Styling link nav */
     nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #000;
-      position: relative;
+    position: relative;
+    text-decoration: none;
+    color: #060956;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 5px 0;
     }
 
+    /* Animasi underline saat hover */
     nav a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 100%;
-      height: 2px;
-      background-color: #000;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.3s ease;
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #060956;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    }
+    
+    nav a:hover::after {
+    transform: scaleX(1);
     }
 
-    nav a:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
+    /* Profile picture */
+    .profile-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #c6c6cc;
+    border-radius: 50%;
+    object-fit: cover;
     }
+
+    /* Mobile responsive: burger muncul */
+    @media (max-width: 600px) {
+    nav {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+
+    nav.active {
+    display: flex;
+    }
+
+    .burger {
+    display: block;
+    }
+}
       
     .profile-icon {
-      width: 40px;
-      height: 40px;
-      background-color: #aaa;
-      border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #c6c6cc;
+    border-radius: 50%;
     }
+} 
+      /* Content */
     .content {
     padding: 20px 30px;
     }
@@ -130,9 +169,10 @@
     }
 
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
     }
 
     .gallery-item {
@@ -252,57 +292,124 @@
       right: 30px;
     }
 
-    .footer {
-      max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  background: #0b0c3d;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  position: relative;
-}
-
-.footer-wrapper {
-  background: #0b0c3d;
-}
-
-    .footer a {
-      color: white;
-      text-decoration: underline;
-      display: block;
-      margin: 8px 0;
+    .footer-wrapper {
+      background: #0b0c3d;
+      width: 100vw;
     }
 
-    .footer-logo img{
-      width: 200px;
-      margin-left: 50px;
-      border-radius: 20%;
+      /* content */
+      .hero {
+    position: relative;
+    text-align: center;
+    padding: 80px 20px;
+    overflow: hidden;
+    width: 100%;
+    min-height: 550px;
+    margin: 0 auto;
+    z-index: 1;
+    height: 70%;
+    max-width: 1200px;
     }
 
-    .social-icons {
+    .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Assets/halamandepan/13.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+    }
+    .hero-images img {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    }
+
+    .hero h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    line-height: 1;
     margin-top: 10px;
-    display: flex;
+    letter-spacing: 5px;
+    }
+      
+    .hero h2 {
+    margin-bottom: 30px; 
+    color: #ffb400;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 50px;
+    }
+      
+    .hero p {
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #060956;
+    line-height: 1.5;
+    }
+      
+     /* Footer */   
+    .footer {
+    width: 100%;
+    background: #0b0c3d;
+    padding: 40px 0;
     align-items: center;
-    gap: 0.5px;
     }
 
-    .social-icons img {
-    margin-right: 10px;
-    font-size: 05px;
-    width: 40px; 
-    display: inline-flex;
+    .site-footer {
+    background-color: #060956; /* Warna background footer */
+    padding: 40px 0;
+    color: white;  
     }
-    .footer-contact {
-    margin-left: -50px;
-    margin-top : 30px;
+
+    .footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    flex-wrap: wrap;
+    gap: 30px;
     }
-    .navij {
-    margin-left: 60px;
-    margin-top : 30px;
+
+    .footer-logo img {
+    width: 200px; /* Atur ukuran logo */
+    height: auto;
+    border-radius: 20%;
     }
-    .Aboutt {
-    margin-top : 30px;
+
+    .footer-links {
+    display: flex;
+    flex-direction: column; /* Agar link ke bawah */
+    gap: 10px;
+    }
+
+    .footer-links a {
+    color: var(--footer-link-color, #ffffff); /* Bisa ubah warna dengan variabel */
+    text-decoration: none;
+    transition: color 0.3s ease;    
+    }
+
+    .footer-links a:hover {
+    color: var(--footer-link-hover-color, orange); /* Hover effect */   
+    }
+      
+    .footer-links h3{
+    font-weight: 700;
+    font-size: 1.5rem;
+    }
+      
+    .footer-links h4{
+    font-weight: 600;
+    font-size: 1.5rem;
     }
       
     .bottom-note {
@@ -310,13 +417,62 @@
     padding: 10px;
     background: #08102a;
     color: white;
-    font-size: 0.85rem;
+    font-size: 0.6rem;
     }
-          
-    .footer a:hover,
-    .footer img:hover {
-    color: #ffb300;
-    cursor: pointer;
+
+    @media (max-width: 600px) {
+    .footer-container {
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    width: 1200px;
+    }
+
+    .footer-logo {
+    text-align: left;
+    }
+
+    .footer-links {
+    align-items: left;
+    }
+}
+      
+    @media (max-width: 480px) {
+    .hero h1 {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    }
+
+    .hero h2 {
+    font-size: 0.9rem;
+    }
+
+    .hero p {
+    font-size: 0.75rem;
+    }
+        
+    .hero img {
+    width: 60px;
+    height: 60px;       
+    }
+}
+    .social-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+    margin: 0 auto;
+    }
+
+    .social-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+    }
+
+    .social-icon:hover {
+    transform: scale(1.2);  
     }
 
       
@@ -327,47 +483,59 @@
   </style>
 </head>
 <body>
-  <div class="page-wrapper">
-
+    <section>
+       <!-- Tombol kembali ke home -->
+    <a href="homepage.html" class="back-to-home-btn"><i class="fa fa-arrow-left"></i></a> 
+    </section>
+    
   <!-- Header tetap -->
   <header>
-    <a href="homepage.html">
-      <img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/logo.png" class="imglogo" alt="Logo">
+  <div class="header-left">
+    <a href="index.html">
+      <img src="Assets/halamandepan/logo.png" class="imglogo" alt="logo" style="width: 100px;">
     </a>
-    <nav>
-      <a href="homepage.html">Home</a>
-      <a href="#bottom">About</a>
-      <a href="homepage.html">Gallery</a>
-      <a href="#bottom">Info</a>
-      <a href="ourstory.html">Our Story</a>
-    </nav>
+  </div>
+
+  <nav id="nav-menu">
+    <a href="ny.html">Home</a>
+    <a href="ny.html/#our-story">Our Story</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#footer">Info</a>
+  </nav>
+
+  <div class="header-right">
+    <div class="burger" onclick="toggleMenu()">☰</div>
     <a href="Portofolio.html">
-      <img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/ytt.JPG" class="profile-icon" alt="decoration"></a>
-  </header>
+      <img src="Assets/halamandepan/ytt.JPG" class="profile-icon" alt="profile">
+    </a>
+  </div>
+</header>
 
-  <!-- Tombol kembali ke home -->
-  <a href="homepage.html" class="back-to-home-btn"><i class="fa fa-arrow-left"></i> Back</a>
-
-  <!-- Konten Galeri -->
-  <div class="content">
-    <h1 class="gallery-title">LDKS <span>Moment</span></h1>
-    <p class="gallery-desc">Ini adalah koleksi dokumentasi kegiatan LDKS di SMK Esemka.</p>
+<section id="home" class="hero">
+    <div class="hero-images">
+    <h2>WELCOME TO</h2>
+    <h1>
+  <span style="color: #060956;">LDKS</span>
+  <span style="color: #ffb400;">MOMENT</span>
+    </h1>
+    <p>Ini adalah koleksi dokumentasi kegiatan LDKS <span style="color: orange"> SMK MULTAZAM BOGOR</span></p></div>
+  </section>
 
     <div class="gallery">
       <!-- Contoh gambar -->
-      <div class="gallery-item"><img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/3.png" alt="Foto 1"></div>
-      <div class="gallery-item"><img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/4.png" alt="Foto 2"></div>
-      <div class="gallery-item"><img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/5.png" alt="Foto 3"></div>
-      <div class="gallery-item"><img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/6.png" alt="Foto 4"></div>
-      <div class="gallery-item"><img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/6.png" alt="Foto 4"></div>
-    <div class="gallery-item"><img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/5.png" alt="Foto 4"></div>
-    <div class="gallery-item"><img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/4.png" alt="Foto 4"></div>
-    <div class="gallery-item"><img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/8.png" alt="Foto 4"></div>
-    <div class="gallery-item"><img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/3.png" alt="Foto 4"></div>
-    <div class="gallery-item"><img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/5.png" alt="Foto 4"></div>
-    <div class="gallery-item"><img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/6.png" alt="Foto 4"></div>
-    <div class="gallery-item"><img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/7.png" alt="Foto 4"></div>
-    <div class="gallery-item"><img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/1.png" alt="Foto 4"></div>
+        <div class="gallery-item"><img src="Assets/halamandepan/3.png" alt="Foto 1"></div>
+        <div class="gallery-item"><img src="Assets/halamandepan/3.png" alt="Foto 2"></div>
+        <div class="gallery-item"><img src="Assets/halamandepan/3.png" alt="Foto 3"></div>
+        <div class="gallery-item"><img src="Assets/halamandepan/3.png" alt="Foto 4"></div>
+        <div class="gallery-item"><img src="Assets/halamandepan/3.png" alt="Foto 4"></div>
+        <div class="gallery-item"><img src="Assets/halamandepan/3.png" alt="Foto 4"></div>
+        <div class="gallery-item"><img src="Assets/halamandepan/3.png" alt="Foto 4"></div>
+        <div class="gallery-item"><img src="Assets/halamandepan/3.png" alt="Foto 4"></div>
+        <div class="gallery-item"><img src="Assets/halamandepan/3.png" alt="Foto 4"></div>
+        <div class="gallery-item"><img src="Assets/halamandepan/3.png" alt="Foto 4"></div>
+        <div class="gallery-item"><img src="Assets/halamandepan/3.png" alt="Foto 4"></div>
+        <div class="gallery-item"><img src="Assets/halamandepan/3.png" alt="Foto 4"></div>
+        <div class="gallery-item"><img src="Assets/halamandepan/3.png" alt="Foto 4"></div>
   </div>
 
   <!-- Modal Preview -->
@@ -388,46 +556,55 @@
     </div>
 </div>
 
+  
+
   <div class="footer-wrapper">
-  <footer id="bottom" class="footer">
-    <div>
-      <div class="footer-logo">
-          <a href="homepage.html">
-      <img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/logf.png" class="imglogo" alt="decoration"> </a>
-      </div>
+  <footer id="footer" class="site-footer">
+  <div class="footer-content">
+    <!-- Logo kiri -->
+    <a href="homepage.html" class="footer-logo">
+      <img src="Assets/halamandepan/logf.png" alt="logo">
+    </a>
+    <!-- Link footer -->
+    <div class="footer-links" style= "max-width: 200px;">
+        <h3>About</h3>
+        <h4>SMK Multazam</h4>
+      <a href="https://maps.app.goo.gl/9ovpBB9UABS456vYA" target="_blank">JL.Raya Salabenda, RT 01/003, Kec.Kemang, Kab.Bogor, Jawa Barat, Indonesia</a>
     </div>
-    <div class="Aboutt">
-      <h3 style="color: #ffffff;">About</h3>
-      <p style="color: #ffffff;">SMK Multazam Bogor</p>
-      <a href="https://maps.app.goo.gl/Didfe1JkqYEEfFK27" target="_blank">JL.Raya Salabenda, RT 01/003, Kec.Kemang, Kab.Bogor, Jawa Barat, Indonesia</a>
-    </div>
-    <div class="navij">
-      <h3 style="color: #ffffff;">Navigation</h3>
+      <div class="footer-links">
+        <h3>Navigasi</h3>
       <a href="#home">Home</a>
-      <a href="#bottom">Info</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#bottom">Our Story</a>
+      <a href="#our-story">Our Story</a>
+      <a href="#gallery">Galeri</a>
+      <a href="#footer">Info</a>
     </div>
-    <div class="footer-contact">
-      <h3 style="color: #ffffff;">Contact & Social Media</h3>
-      <a href="https://wa.me/6285882631541" target="_blank">+62 858 8263 1541</a>
-      <a href="mailto:ahmad.zalf.205@gmail.com" target="_blank">ahmad.zalf.205@gmail.com</a>
-          <div class="social-icons">
-            <a href="https://instagram.com/multazam_smkbgr" target="blank">
-      <img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/ig.png" class="imglogo" alt="decoration"> </a>
-              <a href="https://www.facebook.com/share/15N9ntsiWt/" target="blank">
-      <img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/fb.png" class="imglogo" alt="decoration"> </a>
-              <a href="https://wa.me/6285882631541" target="blank">
-      <img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/telp.png" class="imglogo" alt="decoration"> </a>
-              <a href="https://youtube.com/@smkmultazambogor" target="blank">
-      <img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/yt.png" class="imglogo" alt="decoration"> </a>
-              <a href="homepage.html">
-      <img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/pin.png" class="imglogo" alt="decoration"> </a>
-              <a href="mailto:ahmad.zalf.205@gmail.com" target="blank">
-      <img src="file:///home/chronos/u-1e2fe6887fe96bcd21eac6a0ff61142369dabb84/MyFiles/Zalfan/Project/Web/wd/imel.png" class="imglogo" alt="decoration"> </a>
-          </div>
+      <div class="footer-links">
+          <h3>Info & Contact</h3>
+      <a href="https://wa.me/085882631541">+62 858 8263 1541</a>
+      <a href="mailto:ahmad.zalf.205@gmail.com">ahmad.zalf.205@gmail.com</a>
     </div>
-  </footer>
+      <div class="social-bar">
+  <a href="mailto:ahmad.zalf.205@gmail.com" target="_blank">
+    <img src="Assets/halamandepan/imel.png" alt="Email" class="social-icon" />
+  </a>
+  <a href="https://wa.me/085882631541" target="_blank">
+    <img src="Assets/halamandepan/telp.png" alt="WhatsApp" class="social-icon" />
+  </a>
+  <a href="https://instagram.com/multazam_smkbgr" target="_blank">
+    <img src="Assets/halamandepan/ig.png" alt="Instagram" class="social-icon" />
+  </a>
+          <a href="https://www.facebook.com/share/15N9ntsiWt/" target="_blank">
+    <img src="Assets/halamandepan/fb.png" alt="Instagram" class="social-icon" />
+  </a>
+          <a href="https://youtube.com/@smkmultazambogor" target="_blank">
+    <img src="Assets/halamandepan/yt.png" alt="Instagram" class="social-icon" />
+  </a>
+          <a href="https://id.pinterest.com/ahmadzalf" target="_blank">
+    <img src="Assets/halamandepan/pin.png" alt="Instagram" class="social-icon" />
+  </a>
+</div>
+  </div>
+</footer>
 </div>
       <div class="bottom-note">
         <span>🇮🇩 Indonesia  |  Copyright © 2025 All rights reserved</span>
@@ -486,6 +663,10 @@
         document.getElementById("previewModal").style.display = "none";
       }
     });
+      
+  function toggleMenu() {
+    const nav = document.getElementById('nav-menu');
+    nav.classList.toggle('active');
+  }
   </script>
-</body>
 </html>
