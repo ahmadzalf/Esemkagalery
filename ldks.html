@@ -42,7 +42,6 @@
     gap: 10px;
     }
 
-    
     .header-right {
     display: flex;
     align-items: center;
@@ -253,9 +252,12 @@
 }
 
 .close {
-  font-size: 50px;
-  color: white;
   cursor: pointer;
+  padding: 5px;
+  display: inline-block;
+}
+      .close img {
+  vertical-align: middle;
 }
 
 #downloadBtn {
@@ -486,7 +488,7 @@
 <body>
     <section>
        <!-- Tombol kembali ke home -->
-    <a href="Index.html" class="back-to-home-btn"><i class="fa fa-arrow-left"></i> Back</a> 
+    <a href="index.html" class="back-to-home-btn"><i class="fa fa-arrow-left"></i></a> 
     </section>
     
   <!-- Header tetap -->
@@ -499,8 +501,8 @@
 
   <nav id="nav-menu">
     <a href="index.html">Home</a>
-    <a href="index.html/#our-story">Our Story</a>
-    <a href="#gallery">Gallery</a>
+    <a href="index.html">Our Story</a>
+    <a href="index.html">Gallery</a>
     <a href="#footer">Info</a>
   </nav>
 
@@ -545,8 +547,11 @@
     <a id="downloadBtn" download title="Download">
       <i class="fas fa-download"></i>
     </a>
-    <span class="close" id="closeModal">&times;</span>
-    
+    <!-- Ganti tombol X dengan ikon gambar -->
+<a id="closeModal" class="close">
+  <img src="Assets/halamandepan/close.png" alt="Close" style="width: 24px; height: 24px;" />
+</a>
+
   </div>
   <img class="modal-content" id="previewImg" />
   <div id="caption"></div>
@@ -555,15 +560,12 @@
   <span class="nav-btn prev-btn">&#10094;</span>
   <span class="nav-btn next-btn">&#10095;</span>
     </div>
-</div>
-
-  
 
   <div class="footer-wrapper">
   <footer id="footer" class="site-footer">
   <div class="footer-content">
     <!-- Logo kiri -->
-    <a href="homepage.html" class="footer-logo">
+    <a href="index.html" class="footer-logo">
       <img src="Assets/halamandepan/logf.png" alt="logo">
     </a>
     <!-- Link footer -->
