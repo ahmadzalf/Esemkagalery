@@ -295,7 +295,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('Assets/halamandepan/bg.png'); 
+    background-image: url('Assets/halamandepan/13.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -332,6 +332,160 @@
     line-height: 1.5;
     }
 
+    /* Slider */
+    .slider-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      position: relative;
+      padding: 0 60px;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 0px;
+      background: #000;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px;
+      background: linear-gradient(to top, rgba(0,0.4,0.7,1), transparent);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      color: white;
+    }
+
+    .overlay .text {
+      max-width: 40%;
+    }
+
+    .overlay h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+
+    .overlay p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+    .overlay .cta a {
+      background: white;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .overlay .cta a:hover {
+      background: #ffb400;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #060956;
+      color: white;
+      border: none;
+      border-radius: 10%;
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .nav-button:hover {
+      background: #04043a;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .slider-container {
+        padding: 0 20px;
+      }
+
+      .overlay {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .overlay .text {
+        max-width: 40%;
+        margin-bottom: 0px;
+      }
+
+      .overlay h2 {
+        font-size: 0.6rem;
+      }
+
+      .overlay p {
+        font-size: 0.3rem;
+      }
+
+      .overlay .cta a {
+        padding: 4px 8px;
+        font-size: 0.3rem;
+      }
+        
+    .overlay .cta {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        align-self: auto;
+      }
+    
+      .nav-button {
+        width: 15px;
+        height: 15px;
+        font-size: 7px;
+      }
+    }
+      
     /* footer */
     .footer-wrapper {
       background: #0b0c3d;
@@ -484,7 +638,7 @@
   <div class="header-right">
     <div class="burger" onclick="toggleMenu()">☰</div>
     <a href="Portofolio.html">
-      <img src="Assets/halamandepan/profile.jpg" class="profile-icon" alt="profile">
+      <img src="Assets/halamandepan/ytt.JPG" class="profile-icon" alt="profile">
     </a>
   </div>
 </header>
@@ -523,9 +677,90 @@
       <p style="font-size: 1rem; color: #060956; line-height: 1.5; margin-top: 10px;">
         Cerita tentang beberapa dokumentasi kegiatan selama di Pondok Sekolah SMK Multazam Bogor
       </p>
-
 </section>
-      
+     <section>
+<div class="slider-container">
+    <div class="slider-wrapper" id="slider">
+
+      <!-- Slide 1 -->
+      <div class="slide active">
+        <img src="Assets/halamandepan/3.png" alt="Slide 1" />
+        <div class="overlay">
+          <div class="text">
+            <h2>QURABAN 2025</h2>
+            <p>Dokumentasi acara Qurban dan Keakraban esemka 2025 </p>
+          </div>
+          <div class="cta">
+            <a href="#">Lihat semua</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <img src="Assets/halamandepan/3.png" alt="Slide 2" />
+        <div class="overlay">
+          <div class="text">
+            <h2>RENANG EVENT</h2>
+            <p>Dokumentasi acara Berenang esemka </p>
+          </div>
+          <div class="cta">
+            <a href="#">Lihat semua</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide">
+        <img src="Assets/halamandepan/3.png" alt="Slide 3" />
+        <div class="overlay">
+          <div class="text">
+            <h2>FUTSALABA 2025</h2>
+            <p>Dokumentasi acara Futsal esemka</p>
+          </div>
+          <div class="cta">
+            <a href="#">Lihat semua</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide">
+        <img src="Assets/halamandepan/3.png" alt="Slide 4" />
+        <div class="overlay">
+          <div class="text">
+            <h2>LDKS EVENT</h2>
+            <p>Acara latihan dasar kepemimpinan siswa</p>
+          </div>
+          <div class="cta">
+            <a href="#">Lihat semua</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="slide">
+        <img src="Assets/halamandepan/3.png" alt="Slide 5" />
+        <div class="overlay">
+          <div class="text">
+            <h2>YUK RAMADAN EVENT</h2>
+            <p>Acara Yuk ramadan untuk menyambut bulan suci Romadhon yang penuh berkah</p>
+          </div>
+          <div class="cta">
+            <a href="#">Lihat semua</a>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- Tombol Navigasi -->
+      <button class="nav-button prev" aria-label="Previous Slide" onclick="changeSlide(-1)">
+        <a><</a>
+      </button>
+      <button class="nav-button next" aria-label="Next Slide" onclick="changeSlide(1)">
+        <a>></a>
+      </button>
+  </div>
+     </section> 
     <section id="gallery" class="gallery-section">
     <div class="gallery-header">
      <img src="Assets/halamandepan/Gallery.png" alt="icon"> 
@@ -534,7 +769,7 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-card" onclick="location.href='ldks.html'">
-        <img src="Assets/halamandepan/3.png" alt="LDKS">
+        <img src="Assets/halamandepan/" alt="LDKS">
         <p><strong>LDKS <span style="color: orange">Moment</span></strong></p>
       </div>
       <div class="gallery-card" onclick="location.href='futsal.html'">
@@ -572,7 +807,7 @@
     <footer id="footer" class="site-footer">
   <div class="footer-content">
     <!-- Logo kiri -->
-    <a href="index.html" class="footer-logo">
+    <a href="homepage.html" class="footer-logo">
       <img src="Assets/halamandepan/logf.png" alt="logo">
     </a>
     <!-- Link footer -->
@@ -590,14 +825,14 @@
     </div>
       <div class="footer-links">
           <h3>Info & Contact</h3>
-      <a href="https://wa.me/6285882631541">+62 858 8263 1541</a>
+      <a href="https://wa.me/085882631541">+62 858 8263 1541</a>
       <a href="mailto:ahmad.zalf.205@gmail.com">ahmad.zalf.205@gmail.com</a>
     </div>
       <div class="social-bar">
   <a href="mailto:ahmad.zalf.205@gmail.com" target="_blank">
     <img src="Assets/halamandepan/imel.png" alt="Email" class="social-icon" />
   </a>
-  <a href="https://wa.me/6285882631541" target="_blank">
+  <a href="https://wa.me/085882631541" target="_blank">
     <img src="Assets/halamandepan/telp.png" alt="WhatsApp" class="social-icon" />
   </a>
   <a href="https://instagram.com/multazam_smkbgr" target="_blank">
@@ -624,6 +859,26 @@
     const nav = document.getElementById('nav-menu');
     nav.classList.toggle('active');
   }
-</script>
+     let current = 0;
+    const slides = document.querySelectorAll('.slide');
+    const total = slides.length;
+
+    function showSlide(index) {
+      slides.forEach((s, i) => {
+        s.classList.remove('active');
+        if (i === index) s.classList.add('active');
+      });
+    }
+
+    function changeSlide(direction) {
+      current = (current + direction + total) % total;
+      showSlide(current);
+    }
+
+    // Auto slide setiap 5 detik
+    setInterval(() => {
+      changeSlide(1);
+    }, 6000);
+  </script>
 </body>
 </html>
